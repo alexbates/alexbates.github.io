@@ -4,14 +4,15 @@
 	<meta charset="utf-8">
 	<!-- Control size of viewport, prevent zooming -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Alex Bates - Home</title>
+	<title>Alex Bates - Contact</title>
 	<!-- Link a stylesheet that applies sitewide as well as one that is page specific -->
-	<link href="stylesheets/global.css" rel='stylesheet' type='text/css'>
-	<link href="stylesheets/home.css" rel='stylesheet' type='text/css'>
+	<link href="../stylesheets/global.css" rel='stylesheet' type='text/css'>
+	<link href="../stylesheets/contact.css" rel='stylesheet' type='text/css'>
 	<!-- Import externally hosted Merriweather font family -->
 	<link href="https://fonts.googleapis.com/css2?family=Annapurna+SIL:wght@400;700&family=Fredoka:wght@300..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 	<!-- Wait until DOM is loaded until loading scripts -->
-	<script defer src="scripts/global.js"></script>
+	<script defer src="../scripts/global.js"></script>
+	<script defer src="../scripts/contact.js"></script>
 </head>
 <body>
 
@@ -23,10 +24,10 @@
 			<!-- Create hidden checkbox that is used to open and close menu -->
 			<input id="hiddencheckbox" type="checkbox" />
 			<label class="mobilemenubtn" for="hiddencheckbox">
-				<span></span>
+			  <span></span>
 			</label>
 			<ul class="mobilemenubox">
-				<li><a class="mobilemenuitem" href="#">Home</a></li>
+			  	<li><a class="mobilemenuitem" href="#">Home</a></li>
 				<li><a class="mobilemenuitem" href="#">About</a></li>
 				<li><a class="mobilemenuitem" href="#">Contact</a></li>
 				<!-- Github link that opens in new tab when clicked -->
@@ -46,9 +47,9 @@
 			<input type="checkbox" class="checkbox" id="checkbox">
 			<!-- Use a label that acts a button to toggle the checkbox -->
 			<label for="checkbox" class="checkbox-label">
-				<span class="ts-sun">☀</span>
-				<span class="ts-moon">☽</span>
-				<span class="ball"></span>
+			  <span class="ts-sun">☀</span>
+			  <span class="ts-moon">☽</span>
+			  <span class="ball"></span>
 			</label>
 		</div>
 		<!-- Site navigation that only appears on screens wider than 600px -->
@@ -63,24 +64,51 @@
 			</div>
 			<!-- An unordered list contains links to other pages -->
 			<ul class="navlist">
-				<li class="active"><span>Home</span></li><li><span><a href="/about/">About</a></span></li><li><span><a href="/contact/">Contact</a></span></li>
+				<li><span><a href="/home/">Home</a></span></li><li><span><a href="/about/">About</a></span></li><li class="active"><span>Contact</span></li>
 			</ul>
 		</nav>
 	</div>
 </header>
-<!-- Main content occupies 100% of screen height minus navbar, background is animated gradient -->
 <main>
-	<!-- division occupies entire main, semi transparent image as background -->
+	<!-- A fixed height division allows content to overflow, while still being contained within main -->
 	<div class="block1">
 		<!-- division has fixed width and is centered on screens wider than 1200px -->
 		<div class="maininner">
-			<div class="mainmiddle">
-				<h5>HELLO</h5>
-				<h1>I'm <span>Alex Bates</span></h1>
-				<h3>I'm an Information Technology student, a web developer, and a maker hobbyist. I enjoy building things.</h3>
-				<button class="learnbutton">Learn More</button>
-				<button class="contactbutton">Contact Me</button>
-				<div class="homephotos">&nbsp;</div>
+			<!-- Appears on left side on desktop and top on mobile -->
+			<div class="mainleft">
+				<!-- Credits to Flowbite for the Mailbox icon https://flowbite.com/icons/ -->
+				<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16v-5.5C11 8.5 9.4 7 7.5 7m3.5 9H4v-5.5C4 8.5 5.6 7 7.5 7m3.5 9v4M7.5 7H14m0 0V4h2.5M14 7v3m-3.5 6H20v-6a3 3 0 0 0-3-3m-2 9v4m-8-6.5h1"/>
+				</svg>
+				<h1>Reach Out</h1>
+				<h3>Use this form to send me an email.</h3>
+			</div>
+			<!-- Appears on right side on desktop and bottom on mobile -->
+			<div class="mainright">
+				<h2>Send Me a Message</h2>
+				<!-- Contact form labels describe the content of the inputs and text area -->
+				<!-- Form label spans are used for error messages and are empty except when validation fails -->
+				<!-- Form inputs, textarea, and spans use unique ids to enable manipulation with javascript -->
+				<form id="form" class="contactform"> 
+					<label for="name">Name <span id="errorname" class="errorspan"></span></label>     
+					<input id="name" name="name" type="text"> 
+					<label for="email">Email <span id="erroremail" class="errorspan"></span></label> 
+					<input id="email" name="email" type="text">
+					<label for="subject">Subject <span id="errorsubject" class="errorspan"></span></label> 
+					<input id="subject" name="subject" type="text">
+					<label for="message"><span class="your">Your </span>Message <span id="errormessage" class="errorspan"></span></label> 
+					<textarea rows="3" id="message" name="text"></textarea>
+					<!-- Form submit button consists of 'Send' text and icon contained within spans -->
+					<button type="submit">
+						<span class="btn-text">Send</span>
+						<span class="btn-icon">
+							<!-- Credits to Flowbite for the Paper Plane (send) icon https://flowbite.com/icons/ -->
+							<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+								<path fill-rule="evenodd" d="M12 2c.4 0 .8.3 1 .6l7 18a1 1 0 0 1-1.4 1.3L13 19.5V13a1 1 0 1 0-2 0v6.5L5.4 22A1 1 0 0 1 4 20.6l7-18a1 1 0 0 1 1-.6Z" clip-rule="evenodd"/>
+							</svg>
+						</span>
+					</button>
+				</form>
 			</div>
 		</div>
 	</div>

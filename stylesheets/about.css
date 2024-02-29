@@ -1,0 +1,220 @@
+/* LIGHT AND DARK THEMES */
+/* Variables are used later as values within rules */
+
+/* If the document has no "data-theme" attribute */
+:root {
+    --color-body-background: #e1e1e1;
+    --color-block1-background: #c6f6a4 !important;
+    --color-b1text: #ffffff;
+    --color-b2text: #ffffff;
+    --color-links: #2d8dbc;
+    --color-block3-background: #f8c291;
+    --color-b3text: #ffffff;
+}
+[data-theme="light"] {
+    --color-body-background: #e1e1e1;
+    --color-block1-background: #c6f6a4 !important;
+    --color-b1text: #ffffff;
+    --color-b2text: #ffffff;
+    --color-links: #2d8dbc;
+    --color-block3-background: #f8c291;
+    --color-b3text: #ffffff;
+}
+[data-theme="dark"] {
+    --color-body-background: #3f3f3f;
+    --color-block1-background: #25a65a !important;
+    --color-b1text: #000000;
+    --color-b2text: #000000;
+    --color-links: #2d8dbc;
+    --color-block3-background: #c27d0d;
+    --color-b3text: #000000;
+}
+
+/* STYLING FOR CONTACT PAGE ELEMENTS */
+
+html, body {
+    background: var(--color-body-background); 
+}
+h1 {
+    font-family: "Merriweather", Georgia, serif; /* Use a different font for headings than for the body */
+    font-size: 28px;
+    margin-top: 0px; /* remove margin to avoid issues with background */
+}
+h2 {
+    font-family: "Merriweather", Georgia, serif; /* Use a different font for headings than for the body */
+    margin-bottom: 10px;
+    margin-top: 0px; /* Remove default margin */
+}
+h3 {
+    color: var(--color-h3);
+    font-weight: normal;
+}
+
+.block1 {
+    background-color: var(--color-block1-background);
+    overflow: hidden; /* Solves problem of zero height due to children using float */
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+.b1inner {
+    margin: 0 auto;
+    width: 1200px;
+}
+.b1left {
+    float: left;
+    text-align: center;
+    width: 35%;
+}
+.b1left img {
+    border-radius: 50%;
+    display: block; /* Display as block to enable margin to work */
+    height: 260px;
+    margin: 0 auto;
+    margin-top: 0px;
+    width: 260px;
+}
+.b1left span {
+    display: block; /* Prevent span from occupying same line as image */
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto; /* Horizontally center the span */
+    margin-top: 0px;
+    width: 120px;
+}
+.b1right {
+    float: right;
+    width: 65%;
+}
+.b1text {
+    background: var(--color-b1text);
+    border-radius: 16px;
+    margin-top: 0px;
+    padding: 20px;
+}
+p {
+    font-size: 18px; 
+    line-height: 28px;
+    margin-bottom: 2px; /* Reduce default margin */
+}
+
+
+.block2 {
+    overflow: hidden; /* Solves problem of zero height due to children using float */
+    padding-top: 40px;
+    padding-bottom: 32px;
+}
+.b2inner {
+    margin: 0 auto;
+    width: 1200px;
+}
+.b2left {
+    float: left;
+    width: 65%;
+}
+.b2text {
+    background: var(--color-b2text);
+    border-radius: 16px;
+    margin-top: 12px;
+    padding: 20px;
+}
+.b2text a {color: var(--color-links);}
+.ulouter {padding-left: 20px;} /* Lessen ul default padding */
+.ulinner {padding-left: 20px;} /* Lessen ul default padding */
+.b2text li {font-size: 18px;}
+.b2right {
+    float: right;
+    text-align: center;
+    width: 35%;
+}
+.b2right img {
+    aspect-ratio: 3 / 4;
+    border-radius: 8px;
+    display: block; /* Display as block to enable margin to work */
+    margin: 0 auto;
+    width: 260px;
+}
+.b2right span {
+    display: block; /* Prevent span from occupying same line as image */
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto; /* Horizontally center the span */
+    margin-top: 0px;
+    width: 120px;
+}
+
+.block3 {
+    background-color: var(--color-block3-background);
+}
+.b3inner {
+    margin: 0 auto;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    width: 1200px;
+}
+.b3text {
+    background: var(--color-b3text);
+    border-radius: 16px;
+    margin-top: 0px;
+    padding: 20px;
+}
+.b3text a {color: var(--color-links);}
+
+/* MEDIA QUERIES - RESPONSIVE DESIGN */
+
+@media screen and (max-width: 1200px) {
+    .b1inner {width: 100%;}
+    .b1text {margin-right: 10px;}
+    .b2inner {width: 100%;}
+    .b2text {margin-left: 10px;}
+    .b3inner {width: 100%;}
+    .b3text {margin-left: 10px; margin-right: 10px;}
+}
+@media screen and (max-width: 1116px) {
+    .block1 {padding-bottom: 40px;}
+}
+@media screen and (max-width: 980px) {
+    .block2 {
+        padding-bottom: 40px;
+    }
+    .b2text {
+        margin-top: 0px;
+    }
+    .b2right img {
+        margin-top: 25px;
+        width: 200px;
+    }
+}
+@media screen and (max-width: 885px) {
+    .b1left img {
+        height: 200px;
+        margin-top: 40px;
+        width: 200px;
+    }
+}
+@media screen and (max-width: 720px) {
+    .b1left {
+        float: none;
+        margin-bottom: 25px;
+        width: 100%;
+    }
+    .b1left img {
+        margin-top: 0px;
+    }
+    .b1right {
+        float: none;
+        width: 100%;
+    }
+    .b1text {margin-left: 10px;}
+    .b2left {
+        float: none;
+        width: 100%;
+    }
+    .b2right {
+        float: none;
+        margin-top: 40px;
+        width: 100%;
+    }
+    .b2text {margin-right: 10px;}
+}

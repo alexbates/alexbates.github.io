@@ -1,0 +1,175 @@
+/* LIGHT AND DARK THEMES */
+/* Variables are used later as values within rules */
+
+/* If the document has no "data-theme" attribute */
+:root {
+    --color-body-background: #ffffff;
+    --color-main-bg: linear-gradient(45deg, #f8c291, #f06fa0, #b9e5e7 , #a29bfe, #ffeaa7, #c6f6a4);
+    --background-image-block1: url("../images/home-bg-light-stars.png");
+    --color-mainmiddle-bg: rgba(255, 255, 255, 0.65);
+    --color-mainmiddle-boxshadow: rgba(255, 255, 255, 0.1);
+    --color-h5-line: #000000;
+    --color-learn-button: #000000;
+    --color-learn-button-hover: #131313;
+    --color-contact-button-bg: #000000;
+    --color-contact-button-font: #ffffff;
+    --color-contact-button-bg-hover: #131313;
+}
+[data-theme="light"] {
+    --color-body-background: #ffffff;
+    --color-main-bg: linear-gradient(45deg, #f8c291, #f06fa0, #b9e5e7 , #a29bfe, #ffeaa7, #c6f6a4);
+    --background-image-block1: url("../images/home-bg-light-stars.png");
+    --color-mainmiddle-bg: rgba(255, 255, 255, 0.65);
+    --color-mainmiddle-boxshadow: rgba(255, 255, 255, 0.1);
+    --color-h5-line: #000000;
+    --color-learn-button: #000000;
+    --color-learn-button-hover: #131313;
+    --color-contact-button-bg: #000000;
+    --color-contact-button-font: #ffffff;
+    --color-contact-button-bg-hover: #131313;
+}
+[data-theme="dark"] {
+    --color-body-background: #000000;
+    --color-main-bg: linear-gradient(45deg, #c27d0d, #E94584, #08a4c7, #6c5ce7, #f1c40f, #25a65a);
+    --background-image-block1: url("../images/home-bg-dark-stars.png");
+    --color-mainmiddle-bg: rgba(0, 0, 0, 0.65);
+    --color-mainmiddle-boxshadow: rgba(0, 0, 0, 0.1);
+    --color-h5-line: #ffffff;
+    --color-learn-button: #ffffff;
+    --color-learn-button-hover: #efefef;
+    --color-contact-button-bg: #ffffff;
+    --color-contact-button-font: #000000;
+    --color-contact-button-bg-hover: #efefef;
+}
+
+/* STYLING FOR HOME PAGE ELEMENTS */
+
+html, body {
+    background: var(--color-body-background); 
+}
+main {
+    animation: gradient 16s linear infinite;
+    animation-direction: alternate;
+    background: var(--color-main-bg);
+    background-size: 600% 100%;
+    height: 200px; /* Required for min height to work */
+    min-height: calc(100% - 61px); /* Make minimum height 100% minus navbar */
+    padding: 0;
+}
+@keyframes gradient {
+    0% {background-position: 0%}
+    100% {background-position: 100%}
+}
+.block1 {
+    background-image: var(--background-image-block1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+    width: 100%;
+}
+.maininner {
+    margin: 0 auto;
+    width: 1200px;
+    overflow: hidden;
+}
+.mainmiddle {
+    background: var(--color-mainmiddle-bg); /* Make background black translucent */
+    /* Create a blurred glass effect */
+    backdrop-filter: blur(12.6px);
+    -webkit-backdrop-filter: blur(12.6px);
+    box-shadow: 0 4px 30px var(--color-mainmiddle-boxshadow);
+    border-radius: 16px;
+    margin-bottom: 20px; /* Ensure there is always spacing between mainmiddle and bottom of page */
+    margin-top: 70px;
+    padding-bottom: 16px;
+    width: 550px;
+}
+h1 {
+    font-family: "Merriweather", Georgia, serif;
+    margin-top: 0px; /* remove default margin */
+    margin-bottom: 0px; /* remove default margin */
+    padding-left: 16px;
+    padding-right: 16px;
+}
+h1 span {text-decoration: underline;}
+h3 {
+    font-weight: normal;
+    margin-top: 15px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+h5 {
+    font-size: 14px;
+    overflow: hidden;
+    text-align: left;
+    margin-bottom: 12px;
+    padding-left: 23px;
+    padding-right: 10px;
+    padding-top: 18px;
+  }
+h5::before,
+h5::after {
+    background-color: var(--color-h5-line);
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 20px;
+}
+h5::before {right: 0.5em;} /* Style the left horizontal line */
+h5::after {left: 0.5em;} /* Style the right horizontal line */
+.homephotos {
+    aspect-ratio: 8 / 3; /* Maintain aspect ratio when width changes */
+    background-image: url("../images/home-photos.png");
+    background-size: cover;
+    border-radius: 5px;
+    margin-left: 16px;
+    margin-top: 18px;
+    opacity: 1;
+    width: calc(100% - 34px); /* Occupy full width of parent minus the margin used by self */
+}
+.learnbutton {
+    background: none;
+    border: 2px solid var(--color-learn-button);
+    color: var(--color-learn-button);
+    cursor: pointer;
+    font-family: Inter-Medium;
+    font-size: 18px;
+    margin-left: 16px;
+    padding: 8px 17px; /* Apply 10px padding to top and bottom, 17 to left and right */
+}
+.learnbutton:hover {
+    border: 2px solid var(--color-learn-button-hover);
+}
+.contactbutton {
+    background: var(--color-contact-button-bg);
+    border: 2px solid var(--color-contact-button-bg);
+    color: var(--color-contact-button-font);
+    cursor: pointer;
+    font-family: Inter-Medium;
+    font-size: 18px;
+    margin-left: 10px;
+    padding: 8px 17px; /* Apply 10px padding to top and bottom, 17 to left and right */
+}
+.contactbutton:hover {
+    background: var(--color-contact-button-bg-hover);
+    border: 2px solid var(--color-contact-button-bg-hover);
+}
+
+/* MEDIA QUERIES - RESPONSIVE DESIGN */
+
+@media screen and (max-width: 1200px) {
+    .maininner {width: 100%;}
+    /* Apply 10px spacing between mainmiddle and edge of screen */
+    .mainmiddle {
+        margin-left: 10px; 
+        margin-right: 10px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .mainmiddle {
+        margin-top: 20px;
+        width: calc(100% - 20px);
+    }
+}
