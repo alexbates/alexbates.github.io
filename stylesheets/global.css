@@ -222,7 +222,7 @@ a {color: var(--color-a); text-decoration: none;}
     position: relative; /* Position relative to normal position */
     top: 16px; /* Set top edge of positioned mobilemenubutton */
     width: 28px;
-    z-index: 1;
+    z-index: 11; /* Always display on top of mobilemenubox */
 }
 /* Transform span element into three horizontal bars (hamburger) */
 .mobilemenubtn > span,
@@ -255,6 +255,7 @@ a {color: var(--color-a); text-decoration: none;}
     padding-top: 60px; /* Align top of first li with bottom of navbar */
     padding-left: 0px; /* Remove default padding to the left */
     transition-duration: .25s;
+    z-index: 10; /* Display in front of all other elements except mobilemenubtn */
 }
 .mobilemenuitem {
     color: var(--color-mobilemenuitem);
