@@ -111,7 +111,10 @@ a {color: var(--color-a); text-decoration: none;} /* Sitewide styling for links 
     width: 1200px; /* Width is fixed on screens wider than 1200px */
 }
 .logo {
-    content: var(--content-logo-image); /* Custom logo image, effectively the same as using src HTML attribute */
+    background: var(--content-logo-image); /* Custom logo image, effectively the same as using src HTML attribute */
+    background-size: cover;
+    background-repeat: no-repeat;
+    float: left;
     height: 40px; /* Logo image is a fixed size */
     margin-top: 10px;
     width: 40px; /* Logo image is a fixed size */
@@ -293,7 +296,7 @@ a {color: var(--color-a); text-decoration: none;} /* Sitewide styling for links 
 }
 @media screen and (max-width: 600px) {
     .navbar {text-align: center;}
-    .logo {margin-left: 20px;} /* Position logo in center of navbarinner */
+    .logo {margin-left: calc(42.5% - 28px);} /* Position logo in center of navbarinner */
     .desktopnav {display: none;} /* Hide desktop nav on mobile */
     .mobilemenu {display: block;} /* Show mobilemenu on mobile */
 }

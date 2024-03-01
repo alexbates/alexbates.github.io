@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Alex Bates - About</title>
 	<!-- Link a stylesheet that applies sitewide as well as one that is page specific -->
-	<link href="../stylesheets/global.css" rel='stylesheet' type='text/css'>
+	<link href="../stylesheets/global-ab.css" rel='stylesheet' type='text/css'>
 	<link href="../stylesheets/about.css" rel='stylesheet' type='text/css'>
 	<!-- Import externally hosted Merriweather font family -->
 	<link href="https://fonts.googleapis.com/css2?family=Annapurna+SIL:wght@400;700&family=Fredoka:wght@300..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
 		<!-- Hamburger nav menu that only displays on mobile devices -->
 		<nav class="mobilemenu">
 			<!-- Create hidden checkbox that is used to open and close menu -->
-			<input id="hiddencheckbox" type="checkbox" />
+			<input id="hiddencheckbox" type="checkbox">
 			<label class="mobilemenubtn" for="hiddencheckbox">
 			  <span></span>
 			</label>
@@ -40,7 +40,8 @@
 			</ul>
 		</nav>
 		<!-- Logo image that displays at left of navbar on desktop and center on mobile -->
-		<img class="logo" alt="Alex Bates">
+		<!-- Division is used instead of img since img requires an src attribute -->
+		<div class="logo"></div>
 		<div class="themeselector">
 			<!-- Create hidden checkbox that is used to switch between themes -->
 			<input type="checkbox" class="checkbox" id="checkbox">
