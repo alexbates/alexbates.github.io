@@ -115,8 +115,8 @@ h5::after {
     content: ""; /* Specify content so it will appear */
     display: inline-block;
     height: 1px;
+    margin-bottom: 5px; /* Align lines with center of text instead of bottom */
     position: relative;
-    vertical-align: middle; /* Make the lines appear vertically aligned with heading text */
     width: 20px;
 }
 h5::before {right: 0.5em;} /* Style the left horizontal line */

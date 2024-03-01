@@ -183,6 +183,9 @@ h3 {
     .your {display: none; /* Hide 'Your' in 'Your Message' to prevent colliding with error message */}
 }
 @media screen and (max-width: 600px) {
+    /* Set fixed height for main */
+    /* This  is necessary because margin-bottom not working for mainright, as there is nothing to bounce from */
+    main {height: 855px;}
     .block1 {
         display: block; /* Switch back to block, fixes margin-bottom not working in Mobile Safari */
         height: 580px; /* Adjust the fixed height of the division */
@@ -197,6 +200,7 @@ h3 {
     .mainright {
         float: none; /* Stack instead of float division */
         width: calc(100% - 60px);
+        margin-bottom: 0px;
         margin-left: 10px;
         margin-top: 0px;
     }
