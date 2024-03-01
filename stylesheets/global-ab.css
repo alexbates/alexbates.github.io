@@ -296,7 +296,7 @@ a {color: var(--color-a); text-decoration: none;} /* Sitewide styling for links 
 }
 @media screen and (max-width: 600px) {
     .navbar {text-align: center;}
-    .logo {margin-left: calc(42.5% - 28px);} /* Position logo in center of navbarinner */
+    .logo {margin-left: calc(50% - 68px);} /* Position logo in center of navbarinner, compensate of logo and mobile menu width */
     .desktopnav {display: none;} /* Hide desktop nav on mobile */
     .mobilemenu {display: block;} /* Show mobilemenu on mobile */
 }
