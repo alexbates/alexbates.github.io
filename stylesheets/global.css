@@ -66,14 +66,15 @@ html, body {
     color: var(--color-body);
     height: 100%; /* Required to enable calculated height for main */
     font-family: Inter-Regular; 
-    padding: 0;
-    margin: 0;
+    padding: 0; /* Ensure no padding by default */
+    margin: 0; /* Ensure no margin by default */
 }
-a {color: var(--color-a); text-decoration: none;}
-::selection { background: #2d8dbc; color: #ffffff; }
-::-moz-selection { background: #2d8dbc; color: #ffffff; }
+a {color: var(--color-a); text-decoration: none;} /* Sitewide styling for links */
+::selection { background: #2d8dbc; color: #ffffff; } /* Set colors for text highlighting */
+::-moz-selection { background: #2d8dbc; color: #ffffff; } /* Set colors for text highlighting */
 
 /* IMPORT CUSTOM FONTS */
+/* Credits to rsms.me for the Inter typeface family https://rsms.me/inter/ */
 
 @font-face {
     font-family: Inter-Regular;
@@ -101,24 +102,24 @@ a {color: var(--color-a); text-decoration: none;}
 
 .navbar {
     background: var(--color-navbar-background);
-    border-bottom: 1px solid var(--color-navbar-border);
+    border-bottom: 1px solid var(--color-navbar-border); /* Apply 1 pixel border to bottom of navbar */
     font-size: 20px;
-    height: 60px;
+    height: 60px; /* Navbar is fixed height at all screen sizes */
 }
 .navbarinner {
-    margin: 0 auto;
-    width: 1200px;
+    margin: 0 auto; /* Center the division within navbar */
+    width: 1200px; /* Width is fixed on screens wider than 1200px */
 }
 .logo {
-    content: var(--content-logo-image);
-    height: 40px;
+    content: var(--content-logo-image); /* Custom logo image, effectively the same as using src HTML attribute */
+    height: 40px; /* Logo image is a fixed size */
     margin-top: 10px;
-    width: 40px;
+    width: 40px; /* Logo image is a fixed size */
 }
-.desktopnav {float: right;}
+.desktopnav {float: right;} /* Position nav to the right of navbar */
 .navlist {
-    float: right;
-    list-style-type: none;
+    float: right; /* Position ul to the right of desktopnav */
+    list-style-type: none; /* Don't use bullet points in list */
     margin: 0;
     padding: 0;
 }
@@ -126,28 +127,30 @@ a {color: var(--color-a); text-decoration: none;}
     display: inline-block;
     font-family: Inter-Medium;
     font-size: 16px;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.12em; /* Adjust spacing between li letters */
     line-height: 60px;
-    height: 60px;
+    height: 60px; /* Make li elements full height of navbar, this enables background to be used */
     padding: 0;
-    text-transform: uppercase;
+    text-transform: uppercase; /* Convert li text to uppercase */
 }
 .navlist li:hover:not(.active) {
-    background: var(--color-navlist-li-hover);
+    background: var(--color-navlist-li-hover); /* Set background for li's when hovering, except for those with active class */
 }
 .navlist span {
-    padding-left: 14px;
+    padding-left: 14px; /* Make spacing between edge of span and edge of li */
     padding-right: 14px;
 }
 .active {
+    /* Background effectively makes 2px tall border at bottom of list item */
 	background: linear-gradient(to bottom, var(--color-active-top) calc(100% - 2px), var(--color-active-bottom) 5px) no-repeat left bottom;
 }
 .active:hover {
+    /* Background effectively makes 2px tall border at bottom of list item */
     background: linear-gradient(to bottom, var(--color-active-hover-top) calc(100% - 2px), var(--color-active-bottom) 5px) no-repeat left bottom;
 }
 
 .themeselector {
-    float: right;
+    float: right; /* Position theme selector to the right */
     margin-left: 10px;
 }
 .checkbox {opacity: 0;} /* Hide the input field */
@@ -155,18 +158,18 @@ a {color: var(--color-a); text-decoration: none;}
     background-color: var(--color-checkbox-label);
     width: 50px;
     height: 26px;
-    border-radius: 13px;
-    position: relative;
+    border-radius: 13px; /* Rounded corners, left and right side are circular */
+    position: relative; /* Used so descendant ball span can be set to absolute */
     padding: 0px;
-    cursor: pointer;
+    cursor: pointer; /* Change cursor to make it appear as a button */
     display: flex;
-    align-items: center;
-    justify-content: space-between; /* Place space between icons */
+    align-items: center; /* Align span descendents to middle */
+    justify-content: space-between; /* Place space between span emojis */
     margin-top: -8px;
 }
 .ts-sun {
     color: var(--color-ts-icon);
-    font-size: 16px;
+    font-size: 16px; /* Make sun emoji larger, it should appear same size as moon emoji */
     padding-left: 6px;
 }
 .ts-moon {
@@ -175,19 +178,19 @@ a {color: var(--color-a); text-decoration: none;}
 }
 .checkbox-label .ball {
     background-color: var(--color-checkbox-label-ball);
-    width: 22px;
-    height: 22px;
-    position: absolute;
-    left: 2px;
+    width: 22px; /* Sizing is 4px smaller than label container */
+    height: 22px; /* Sizing is 4px smaller than label container */
+    position: absolute; /* Position relative to ancestor */
+    left: 2px; /* Position in center of label */
     top: 2px;
-    border-radius: 50%;
+    border-radius: 50%; /* Make the span round to appear as a ball */
     transition: transform 0.2s linear;
 }
 .checkbox:checked + .checkbox-label .ball {
-    transform: translateX(24px);
+    transform: translateX(24px); /* Move ball 24px when checkbox is checked */
 }
 .github {
-    float: right;
+    float: right; /* Position division to right of desktopnav */
 }
 .github svg {
     height: 40px;
@@ -229,7 +232,7 @@ a {color: var(--color-a); text-decoration: none;}
 .mobilemenubtn > span::before,
 .mobilemenubtn > span::after {
     display: block;
-    position: absolute;
+    position: absolute; /* Position relative to ancestor */
     width: 100%;
     height: 2px;
     background-color: var(--color-mobilemenu-span);
@@ -265,20 +268,23 @@ a {color: var(--color-a); text-decoration: none;}
     letter-spacing: 0.12em;
     padding: 16px 0px; /* Apply padding on top and bottom to space items apart */
     text-decoration: none;
-    text-transform: uppercase;
+    text-transform: uppercase; /* Convert text content to uppercase */
     transition-duration: .25s;
 }
 .mobilemenuitem svg {
     height: 27px;
     margin-left: 4px;
     margin-top: -2px;
-    position: absolute;
+    position: absolute; /* Position relative to ancestor */
     width: 27px;
 }
 /* Pull mobile github link to the left to make it appear centered */
 .mobilegithub {margin-left: -26px;}
 /* Change link background color when hovering */
 .mobilemenuitem:hover {background-color: var(--color-mobilemenuitem-hover);}
+
+/* MEDIA QUERIES - RESPONSIVE DESIGN */
+/* Apply padding and margin at various screen sizes */
 
 @media screen and (max-width: 1200px) {
     .navbarinner {width: 100%;}

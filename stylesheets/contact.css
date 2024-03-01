@@ -53,17 +53,15 @@
 html, body {
     background: var(--color-body-background); 
 }
-
 .block1 {
     background-color: var(--color-block1-background);
     display: flow-root; /* Use flow root to prevent 0 height due to floated children */
     height: 400px;
 }
 .maininner {
-    margin: 0 auto;
-    width: 1200px;
+    margin: 0 auto; /* Center the division within block1 */
+    width: 1200px; /* Width is fixed on screens wider than 1200px */
 }
-
 h1 {
     font-family: "Merriweather", Georgia, serif;
     margin-top: 0px; /* remove margin to avoid issues with background */
@@ -76,28 +74,28 @@ h2 {
 }
 h3 {
     color: var(--color-h3);
-    font-weight: normal;
+    font-weight: normal; /* Heading will not display as bold */
     padding-left: 8px;
     padding-right: 8px;
 }
 
 .mainleft {
-    float: left;
+    float: left; /* Position to left of maininner */
     height: 400px;
-    text-align: center;
-    width: 35%;
+    text-align: center; /* Center text within this division */
+    width: 35%; /* Division width is a fraction of parent width */
     overflow: hidden;
 }
 .mainleft svg {
     color: var(--color-mainleft-svg);
     height: 140px;
-    padding-top: 60px;
+    padding-top: 60px; /* Add spacing to effectively vertically center the svg and text */
     width: 140px;
 }
 .mainright {
     background: var(--color-mainright);
-    border-radius: 20px;
-    float: right;
+    border-radius: 20px; /* Round the corners of the division */
+    float: right; /* Position to right of maininner */
     margin-top: 30px;
     margin-bottom: 20px;
     padding: 20px;
@@ -105,7 +103,7 @@ h3 {
 }
 .contactform label {
     color: var(--color-contactform-label);
-    display: block;
+    display: block; /* Don't display as inline, label will occupy whole line */
     font-size: 18px;
     padding-bottom: 8px;
 }
@@ -117,9 +115,9 @@ h3 {
     font-family: Inter-Regular;
     font-size: 18px;
     margin-bottom: 8px;
-    outline: 0;
+    outline: 0; /* Remove the default blue input outline when selected */
     padding: 8px;
-    width: 100%;
+    width: 100%; /* Occupy entire width of mainright */
 }
 .contactform textarea {
     background: var(--color-contactform-textfields); /* Color match navbar */
@@ -129,10 +127,10 @@ h3 {
     font-family: Inter-Regular;
     font-size: 18px;
     margin-bottom: 8px;
-    outline: 0;
+    outline: 0; /* Remove the default blue input outline when selected */
     padding: 8px;
     resize: none; /* Disable resizing */
-    width: 100%;
+    width: 100%; /* Occupy entire width of mainright */
 }
 .errorspan {
     color: var(--color-error); 
@@ -141,10 +139,10 @@ h3 {
 .error {border-color: var(--color-error) !important; /* Change border color when there is a validation error */ }
 .contactform button[type=submit] {
     background: var(--color-cf-button-bg);
-    border: none;
+    border: none; /* Remove default border, this enables the flat design */
     color: var(--color-cf-button-font);
-    cursor: pointer;
-    font-family: Inter-Medium;
+    cursor: pointer; /* Button should appear clickable */
+    font-family: Inter-Medium; /* Use bold font for the button */
     font-size: 18px;
     margin-top: 10px;
     padding: 10px 17px; /* Apply 10px padding to top and bottom, 17 to left and right */
@@ -164,19 +162,20 @@ h3 {
 }
 .btn-icon svg {
     color: var(--color-btnicon-svg);
-    height: 100%;
+    height: 100%; /* SVG is full height and width of button */
     width: 100%;
 }
 .btn-icon svg path {
-    transform: rotate(90deg);
+    transform: rotate(90deg); /* Rotate the Flowbite send icon, it looks better horizontal */
     transform-box: fill-box;
     transform-origin: center;
 }
 
 /* MEDIA QUERIES - RESPONSIVE DESIGN */
+/* Apply padding and margin at various screen sizes */
 
 @media screen and (max-width: 1200px) {
-    .maininner {width: 100%;}
+    .maininner {width: 100%;} /* Change from 1200px to 100% to prevent scrollbars */
     .mainleft {margin-left: 10px;}
     .mainright {margin-right: 10px;}
 }
@@ -185,17 +184,17 @@ h3 {
 }
 @media screen and (max-width: 600px) {
     .block1 {
-        height: 570px;
+        height: 570px; /* Adjust the fixed height of the division */
     }
     .mainleft {
         height: 300px;
-        float: none;
+        float: none; /* Stack instead of float division */
         margin-left: 0px;
         width: 100%;
     }
     .mainleft svg { padding-top: 30px; }
     .mainright {
-        float: none;
+        float: none; /* Stack instead of float division */
         width: calc(100% - 60px);
         margin-left: 10px;
         margin-top: 0px;
