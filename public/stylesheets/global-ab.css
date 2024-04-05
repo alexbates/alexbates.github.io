@@ -1,0 +1,302 @@
+/* LIGHT AND DARK THEMES */
+/* Variables are used later as values within rules */
+
+/* If the document has no "data-theme" attribute */
+:root {
+    --color-body: #000000;
+    --color-a: #000000;
+    --color-navbar-background: #f1f1f1;
+    --color-navbar-border: #dcdcdc;
+    --content-logo-image: url("../images/logo-light.png");
+    --color-navlist-li-hover: #ececec;
+    --color-active-bottom: #111111;
+    --color-active-top: #f1f1f1;
+    --color-active-hover-top: #ececec;
+    --color-checkbox-label: #000000;
+    --color-ts-icon: #ffffff;
+    --color-checkbox-label-ball: #f1f1f1;
+    --color-mobilemenu-span: #000000;
+    --color-mobilemenubox: #f1f1f1;
+    --color-mobilemenubox-border: #dcdcdc;
+    --color-mobilemenuitem: #000000;
+    --color-mobilemenuitem-hover: #ececec;
+}
+[data-theme="light"] {
+    --color-body: #000000;
+    --color-a: #000000;
+    --color-navbar-background: #f1f1f1;
+    --color-navbar-border: #dcdcdc;
+    --content-logo-image: url("../images/logo-light.png");
+    --color-navlist-li-hover: #ececec;
+    --color-active-bottom: #111111;
+    --color-active-top: #f1f1f1;
+    --color-active-hover-top: #ececec;
+    --color-checkbox-label: #000000;
+    --color-ts-icon: #ffffff;
+    --color-checkbox-label-ball: #f1f1f1;
+    --color-mobilemenu-span: #000000;
+    --color-mobilemenubox: #f1f1f1;
+    --color-mobilemenubox-border: #dcdcdc;
+    --color-mobilemenuitem: #000000;
+    --color-mobilemenuitem-hover: #ececec;
+}
+[data-theme="dark"] {
+    --color-body: #ffffff;
+    --color-a: #ffffff;
+    --color-navbar-background: #232323;
+    --color-navbar-border: #353535;
+    --content-logo-image: url("../images/logo-dark.png");
+    --color-navlist-li-hover: #272727;
+    --color-active-bottom: #f1f1f1;
+    --color-active-top: #232323;
+    --color-active-hover-top: #272727;
+    --color-checkbox-label: #ffffff;
+    --color-ts-icon: #000000;
+    --color-checkbox-label-ball: #232323;
+    --color-mobilemenu-span: #ffffff;
+    --color-mobilemenubox: #232323;
+    --color-mobilemenubox-border: #353535;
+    --color-mobilemenuitem: #ffffff;
+    --color-mobilemenuitem-hover: #272727;
+}
+
+/* SITEWIDE STYLING */
+
+html, body {
+    color: var(--color-body);
+    height: 100%; /* Required to enable calculated height for main */
+    font-family: Inter-Regular; 
+    padding: 0; /* Ensure no padding by default */
+    margin: 0; /* Ensure no margin by default */
+}
+a {color: var(--color-a); text-decoration: none;} /* Sitewide styling for links */
+::selection { background: #2d8dbc; color: #ffffff; } /* Set colors for text highlighting */
+::-moz-selection { background: #2d8dbc; color: #ffffff; } /* Set colors for text highlighting */
+
+/* IMPORT CUSTOM FONTS */
+/* Credits to rsms.me for the Inter typeface family https://rsms.me/inter/ */
+
+@font-face {
+    font-family: Inter-Regular;
+    src: url('../fonts/Inter-Regular.otf'); /* IE9-IE11 */
+    src: url('../fonts/Inter-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Inter-Regular.woff') format('woff'), /* Most Browsers */
+         url('../fonts/Inter-Regular.ttf')  format('truetype'); /* Most Except IE */
+}
+@font-face {
+    font-family: Inter-Medium;
+    src: url('../fonts/Inter-Medium.otf'); /* IE9-IE11 */
+    src: url('../fonts/Inter-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Inter-Medium.woff') format('woff'), /* Most Browsers */
+         url('../fonts/Inter-Medium.ttf')  format('truetype'); /* Most Except IE */
+}
+@font-face {
+    font-family: Inter-SemiBold;
+    src: url('../fonts/Inter-SemiBold.otf'); /* IE9-IE11 */
+    src: url('../fonts/Inter-SemiBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Inter-SemiBold.woff') format('woff'), /* Most Browsers */
+         url('../fonts/Inter-SemiBold.ttf')  format('truetype'); /* Most Except IE */
+}
+
+/* NAVBAR */
+
+.navbar {
+    background: var(--color-navbar-background);
+    border-bottom: 1px solid var(--color-navbar-border); /* Apply 1 pixel border to bottom of navbar */
+    font-size: 20px;
+    height: 60px; /* Navbar is fixed height at all screen sizes */
+}
+.navbarinner {
+    margin: 0 auto; /* Center the division within navbar */
+    width: 1200px; /* Width is fixed on screens wider than 1200px */
+}
+.logo {
+    background: var(--content-logo-image); /* Custom logo image, effectively the same as using src HTML attribute */
+    background-size: cover;
+    background-repeat: no-repeat;
+    float: left;
+    height: 40px; /* Logo image is a fixed size */
+    margin-top: 10px;
+    width: 40px; /* Logo image is a fixed size */
+}
+.desktopnav {float: right;} /* Position nav to the right of navbar */
+.navlist {
+    float: right; /* Position ul to the right of desktopnav */
+    list-style-type: none; /* Don't use bullet points in list */
+    margin: 0;
+    padding: 0;
+}
+.navlist li {
+    display: inline-block;
+    font-family: Inter-Medium;
+    font-size: 16px;
+    letter-spacing: 0.12em; /* Adjust spacing between li letters */
+    line-height: 60px;
+    height: 60px; /* Make li elements full height of navbar, this enables background to be used */
+    padding: 0;
+    text-transform: uppercase; /* Convert li text to uppercase */
+}
+.navlist li:hover:not(.active) {
+    background: var(--color-navlist-li-hover); /* Set background for li's when hovering, except for those with active class */
+}
+.navlist span {
+    padding-left: 14px; /* Make spacing between edge of span and edge of li */
+    padding-right: 14px;
+}
+.active {
+    /* Background effectively makes 2px tall border at bottom of list item */
+	background: linear-gradient(to bottom, var(--color-active-top) calc(100% - 2px), var(--color-active-bottom) 5px) no-repeat left bottom;
+}
+.active:hover {
+    /* Background effectively makes 2px tall border at bottom of list item */
+    background: linear-gradient(to bottom, var(--color-active-hover-top) calc(100% - 2px), var(--color-active-bottom) 5px) no-repeat left bottom;
+}
+
+.themeselector {
+    float: right; /* Position theme selector to the right */
+    margin-left: 10px;
+}
+.checkbox {opacity: 0;} /* Hide the input field */
+.checkbox-label {
+    background-color: var(--color-checkbox-label);
+    width: 50px;
+    height: 26px;
+    border-radius: 13px; /* Rounded corners, left and right side are circular */
+    position: relative; /* Used so descendant ball span can be set to absolute */
+    padding: 0px;
+    cursor: pointer; /* Change cursor to make it appear as a button */
+    display: flex;
+    align-items: center; /* Align span descendents to middle */
+    justify-content: space-between; /* Place space between span emojis */
+    margin-top: -8px;
+}
+.ts-sun {
+    color: var(--color-ts-icon);
+    font-size: 16px; /* Make sun emoji larger, it should appear same size as moon emoji */
+    padding-left: 6px;
+}
+.ts-moon {
+    color: var(--color-ts-icon);
+    padding-right: 8px;
+}
+.checkbox-label .ball {
+    background-color: var(--color-checkbox-label-ball);
+    width: 22px; /* Sizing is 4px smaller than label container */
+    height: 22px; /* Sizing is 4px smaller than label container */
+    position: absolute; /* Position relative to ancestor */
+    left: 2px; /* Position in center of label */
+    top: 2px;
+    border-radius: 50%; /* Make the span round to appear as a ball */
+    transition: transform 0.2s linear;
+}
+.checkbox:checked + .checkbox-label .ball {
+    transform: translateX(24px); /* Move ball 24px when checkbox is checked */
+}
+.github {
+    float: right; /* Position division to right of desktopnav */
+}
+.github svg {
+    height: 40px;
+    margin-left: 14px;
+    margin-top: 10px;
+    margin-right: 14px;
+    width: 40px;
+}
+
+/* MOBILE HAMBURGER MENU */
+
+.mobilemenu {
+    display: none; /* Hide mobile menu on desktop */
+    float: left; /* Prevent menu from taking space and pushing elements in navbarinner div */
+}
+/* Hide the hidden checkbox that enables the hamburger */
+#hiddencheckbox {opacity: 0;}
+/* Create rotation effect on span when hidden checkbox is checked */
+#hiddencheckbox:checked ~ .mobilemenubtn > span {transform: rotate(45deg);}
+#hiddencheckbox:checked ~ .mobilemenubtn > span::before {top: 0; transform: rotate(0);}
+#hiddencheckbox:checked ~ .mobilemenubtn > span::after {top: 0;transform: rotate(90deg);}
+/* Show mobilemenubox div after clicking hamburger */
+#hiddencheckbox:checked ~ .mobilemenubox {left: 0; visibility: visible;}
+/* Style the label that acts as a button */
+.mobilemenubtn {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    float: left;
+    height: 28px;
+    left: 12px; /* Set left edge of positioned mobilemenubutton */
+    position: relative; /* Position relative to normal position */
+    top: 16px; /* Set top edge of positioned mobilemenubutton */
+    width: 28px;
+    z-index: 11; /* Always display on top of mobilemenubox */
+}
+/* Transform span element into three horizontal bars (hamburger) */
+.mobilemenubtn > span,
+.mobilemenubtn > span::before,
+.mobilemenubtn > span::after {
+    display: block;
+    position: absolute; /* Position relative to ancestor */
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-mobilemenu-span);
+    transition-duration: .25s;
+  }
+/* Inserted content before the span and position it above span */
+.mobilemenubtn > span::before {content: ''; top: -8px;}
+/* Insert content after the span and position it below span */
+.mobilemenubtn > span::after {content: ''; top: 8px;}
+/* Style unordered list page overlay */
+.mobilemenubox {
+    background-color: var(--color-mobilemenubox);
+    border-right: 1px solid var(--color-mobilemenubox-border);
+    display: block;
+    position: fixed;
+    visibility: hidden; /* Hide while checkbox is not checked */
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100%;
+    margin: 0;
+    list-style: none;
+    padding-top: 60px; /* Align top of first li with bottom of navbar */
+    padding-left: 0px; /* Remove default padding to the left */
+    transition-duration: .25s;
+    z-index: 10; /* Display in front of all other elements except mobilemenubtn */
+}
+.mobilemenuitem {
+    color: var(--color-mobilemenuitem);
+    display: block;
+    font-family: Inter-Medium;
+    font-size: 18px;
+    letter-spacing: 0.12em;
+    padding: 16px 0px; /* Apply padding on top and bottom to space items apart */
+    text-decoration: none;
+    text-transform: uppercase; /* Convert text content to uppercase */
+    transition-duration: .25s;
+}
+.mobilemenuitem svg {
+    height: 27px;
+    margin-left: 4px;
+    margin-top: -2px;
+    position: absolute; /* Position relative to ancestor */
+    width: 27px;
+}
+/* Pull mobile github link to the left to make it appear centered */
+.mobilegithub {margin-left: -26px;}
+/* Change link background color when hovering */
+.mobilemenuitem:hover {background-color: var(--color-mobilemenuitem-hover);}
+
+/* MEDIA QUERIES - RESPONSIVE DESIGN */
+/* Apply padding and margin at various screen sizes */
+
+@media screen and (max-width: 1200px) {
+    .navbarinner {width: 100%;}
+    .logo {margin-left: 10px;}
+    .themeselector {margin-right: 10px;}
+}
+@media screen and (max-width: 600px) {
+    .navbar {text-align: center;}
+    .logo {margin-left: calc(50% - 68px);} /* Position logo in center of navbarinner, compensate of logo and mobile menu width */
+    .desktopnav {display: none;} /* Hide desktop nav on mobile */
+    .mobilemenu {display: block;} /* Show mobilemenu on mobile */
+}
