@@ -6,10 +6,12 @@ const subject = document.getElementById('subject');
 const message = document.getElementById('message');
 
 form.addEventListener('submit', e => {
-    // Stop the default browser behavior of submit button event
-    e.preventDefault();
     // Call function to validate form
-    validateForm();
+    // Condition that is true when validateForm does not return true
+    if (!validateForm()) {
+        // Stop the default browser behavior of submit button event
+        e.preventDefault();
+    }
 });
 
 const setError = (element, errorDisplay, fieldNum) => {
@@ -39,19 +41,28 @@ const validateForm = () => {
     const subjectTrimmed = subject.value.trim();
     const messageTrimmed = message.value.trim();
 
+    // Variable to determine whether form validates
+    var isValid = true;
+
     // Validate Name and set error message if needed
-    if(nameTrimmed === '') {setError(fname, '(This field is required)', 1);}
+    if(nameTrimmed === '') {setError(fname, '(This field is required)', 1); isValid = false;}
 
     // Validate Email and set error message if needed
     if(emailTrimmed === '') {setError(email, '(This field is required)', 2);} 
-    else if (!isValidEmail(emailTrimmed)) {setError(email, '(Invalid email provided)', 2);}
+    else if (!isValidEmail(emailTrimmed)) {setError(email, '(Invalid email provided)', 2); isValid = false;}
 
     // Validate Subject and set error message if needed
-    if(subjectTrimmed === '') {setError(subject, '(This field is required)', 3);} 
-    else if (subjectTrimmed.length < 5 ) {setError(subject, '(Must be 5 characters)', 3)}
+    if(subjectTrimmed === '') {setError(subject, '(This field is required)', 3); isValid = false;} 
+    else if (subjectTrimmed.length < 5 ) {setError(subject, '(Must be 5 characters)', 3); isValid = false;}
 
     // Validate Message and set error message if needed
-    if(messageTrimmed === '') {setError(message, '(This field is required)', 4);}
-    else if (messageTrimmed.length < 30 ) {setError(message, '(Must be 30 characters)', 4)}
+    if(messageTrimmed === '') {setError(message, '(This field is required)', 4); isValid = false;}
+    else if (messageTrimmed.length < 30 ) {setError(message, '(Must be 30 characters)', 4); isValid = false;}
 
+    if(isValid) {
+        return true;
+    }
+    else {
+        return false;
+    }
 };
