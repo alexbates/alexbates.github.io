@@ -4,7 +4,7 @@
 /* If the document has no "data-theme" attribute */
 :root {
     --color-body-background: #ffffff;
-    --color-main-bg: linear-gradient(45deg, #f8c291, #f06fa0, #b9e5e7 , #a29bfe, #ffeaa7, #c6f6a4);
+    --color-main-bg: linear-gradient(45deg, #f8c291, #f06fa0, #b9e5e7, #a29bfe, #ffeaa7, #c6f6a4);
     --background-image-block1: url("../images/home-bg-light-stars.png");
     --color-mainmiddle-bg: rgba(255, 255, 255, 0.65);
     --color-mainmiddle-boxshadow: rgba(255, 255, 255, 0.1);
@@ -30,7 +30,7 @@
 }
 [data-theme="dark"] {
     --color-body-background: #000000;
-    --color-main-bg: linear-gradient(45deg, #c27d0d, #E94584, #08a4c7, #6c5ce7, #f1c40f, #25a65a);
+    --color-main-bg: linear-gradient(45deg, #c27d0d, #e94584, #08a4c7, #6c5ce7, #f1c40f, #25a65a);
     --background-image-block1: url("../images/home-bg-dark-stars.png");
     --color-mainmiddle-bg: rgba(0, 0, 0, 0.65);
     --color-mainmiddle-boxshadow: rgba(0, 0, 0, 0.1);

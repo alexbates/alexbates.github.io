@@ -8,7 +8,7 @@
     --color-b1text: #ffffff;
     --color-b2text: #ffffff;
     --color-links: #2d8dbc;
-    --color-block3-background: #f8c291;
+    --color-block3-background: #a29bfe;
     --color-b3text: #ffffff;
 }
 [data-theme="light"] {
@@ -17,7 +17,7 @@
     --color-b1text: #ffffff;
     --color-b2text: #ffffff;
     --color-links: #2d8dbc;
-    --color-block3-background: #f8c291;
+    --color-block3-background: #a29bfe;
     --color-b3text: #ffffff;
 }
 [data-theme="dark"] {
@@ -26,7 +26,7 @@
     --color-b1text: #000000;
     --color-b2text: #000000;
     --color-links: #2d8dbc;
-    --color-block3-background: #c27d0d;
+    --color-block3-background: #6c5ce7;
     --color-b3text: #000000;
 }
 

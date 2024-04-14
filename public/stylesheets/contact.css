@@ -11,7 +11,8 @@
     --color-contactform-label: #828282;
     --color-contactform-textfields: #f1f1f1;
     --color-contactform-textfields-font: #000000;
-    --color-error: #d95647;
+    --color-error: #fe7e70;
+    --color-success: #80daa7;
     --color-cf-button-bg: #000000;
     --color-cf-button-font: #ffffff;
     --color-cf-button-bg-hover: #131313;
@@ -26,7 +27,8 @@
     --color-contactform-label: #828282;
     --color-contactform-textfields: #f1f1f1;
     --color-contactform-textfields-font: #000000;
-    --color-error: #d95647;
+    --color-error: #fe7e70;
+    --color-success: #80daa7;
     --color-cf-button-bg: #000000;
     --color-cf-button-font: #ffffff;
     --color-cf-button-bg-hover: #131313;
@@ -42,6 +44,7 @@
     --color-contactform-textfields: #232323;
     --color-contactform-textfields-font: #ffffff;
     --color-error: #c24435;
+    --color-success: #1c7e45;
     --color-cf-button-bg: #ffffff;
     --color-cf-button-font: #000000;
     --color-cf-button-bg-hover: #efefef;
@@ -100,6 +103,14 @@ h3 {
     margin-bottom: 30px;
     padding: 20px;
     width: calc(63% - 50px);
+}
+#formSuccess {
+    background: var(--color-success);
+    padding: 6px;
+}
+#formError {
+    background: var(--color-error);
+    padding: 6px;
 }
 .contactform label {
     color: var(--color-contactform-label);
